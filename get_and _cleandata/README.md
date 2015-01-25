@@ -9,7 +9,7 @@ This project is to handle the real human activity recognition data which are fro
 5.	From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 
-1.	Merges the training and the test sets to create one data set.
+merges the training and the test sets to create one data set.
 	The experiments have been carried out with a group of 30 volunteers.Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING), wearing a smartphone on the waist. Using its embedded accelerometer and gyroscope, there captured 3-axial linear acceleration and 3-axial angular velocity. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. This part of project is to merges the training and the test sets to create one complete data set.
 
 	According the README.txt, the data is included in the following 
@@ -25,17 +25,17 @@ This project is to handle the real human activity recognition data which are fro
 	Then ,I use cbind() to merge subjects, label and data in each folder. 
 	Finally,I use rbind() to merge the test data and train data
 
-2.	Extracts only the measurements on the mean and standard deviation for each measurement. 
+Extracts only the measurements on the mean and standard deviation for each measurement. 
 	First, I read all 561 features as string ,stored the result in 'features'. assign the  561 variables name with 561 features 
     Then ,using grep() and union() to get the numeric list which contains the index of feature number that has "mean" or "std" in its name,taskshere comes out 79 results.using index to Extracts only the measurements on the mean and standard deviation for each measurement.
     Finallyinally I get the new data set that contains subject, activity label and extraction data
 		
-3.	Uses descriptive activity names to name the activities in the data set
+Uses descriptive activity names to name the activities in the data set
 	According the activity_labels.txt description, each label of activity means:
 	1 WALKING,2 WALKING_UPSTAIRS,3 WALKING_DOWNSTAIRS 4 SITTING,5 STANDING, 6 LAYING
     I Use the sub() to substitute the label with corresponding descriptive activity names 
 	
-4.	Appropriately labels the data set with descriptive variable names. 
+Appropriately labels the data set with descriptive variable names. 
 	Names of variables should be
         -All lower case when possible
         -Descriptive(Diagnosis versus Dx)
@@ -46,5 +46,5 @@ This project is to handle the real human activity recognition data which are fro
 	Second, substitute the 79 results name that have the first letter as f in label with frequency,t with time and string "acc" with accelerator
     Third, I get rid of the "()" and change "BodyBody" to "Body" using gsub
 	
-5.	From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
    At this part, I use reshape2 library ,with melt() and dcast() the dataset to obtain the final tidy dataset
