@@ -1,0 +1,15 @@
+Data Dictionary - final tidy data
+subject int
+		Identifies the subject who performed the activity for each window sample. Its range is from 1 to 30
+Activity char
+		Activity name. There are 6 kind of activity
+		WALKING
+		WALKING_UPSTAIRS
+		WALKING_DOWNSTAIRS
+		SITTING
+		STANDING
+		LAYING
+Variable  factor
+        A 561-feature vector with time and frequency domain variables
+Values num
+       The the average of each variable for each activity and each subject
